@@ -27,7 +27,7 @@
 
         function timer(start,end){
             let timerId = 0;
-            let newTime = function(newStart,newEnd){
+            let newTime = function(newStart,newEnd){ 
                 console.log(newStart);
                 timerId = setTimeout(()=>{
                     if(newStart < newEnd) newTime(newStart+1,newEnd)
