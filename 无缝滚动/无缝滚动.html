@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,ul,li{
+            margin: 0;padding: 0;
+        }
+        div{
+            width: 600px;
+            height: 80px;
+            font-size: 24px;
+            border: 1px solid #090;
+            outline: none;
+            margin: 20px auto;
+            overflow: hidden;
+            
+        }
+        div ul{
+            width: 2000px;
+            position: relative;
+        }
+        div ul li{
+            width: 100px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+            list-style: none;
+            float: left;
+            
+        }
+        #toon{
+            list-style-type: none;
+        }
+        .one{
+            background-color: aquamarine;
+        }
+        .two{
+            background-color: beige;
+        }
+        .three{
+            background-color: cornflowerblue;
+        }
+        .four{
+            background-color: darkcyan;
+        }
+        .five{
+            background-color: darksalmon;
+        }
+        .six{
+            background-color: gainsboro;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var main=document.getElementById("main");
+            var toon=document.getElementById("toon");
+            toon.innerHTML +=toon.innerHTML;
+            var left = 0;
+            var dis1;
+            function open1(){
+                dis1=setInterval(function(){
+                if(left>-600){
+                    toon.style.left = left+"px";
+                    left=left-4;
+                }else{
+                    left = 0;
+                }
+                },20);
+            };
+            open1();
+            mian.onmouseover=function(){
+                clearInterval(dis1);
+            }
+            mian.onmouseout=function(){
+                open1();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="mian">
+        <ul id="toon">
+            <li class="one">1</li>
+            <li class="two">2</li>
+            <li class="three">3</li>
+            <li class="four">4</li>
+            <li class="five">5</li>
+            <li class="six">6</li>
+        </ul>
+    </div>
+</body>
+</html>
