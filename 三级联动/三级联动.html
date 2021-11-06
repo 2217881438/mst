@@ -26,14 +26,42 @@
     province.innerHTML=sheng;
     var shi="";
     for(key in provinceList[province.value].cityList){
-        console.log(provinceList[province.value].cityList[key]);
-        console.log(provinceList[province.value].cityList[key].name);
+        // console.log(provinceList[province.value].cityList[key]);
+        // console.log(provinceList[province.value].cityList[key].name);
         shi+="<option value="+key+">"+provinceList[province.value].cityList[key].name+"</option>"
     }
     city.innerHTML=shi;
     var qu="";
     for(key in provinceList[province.value].cityList[city.value].areaList){
-        
+        console.log(provinceList[province.value].cityList[city.value].areaList[key]);
+        console.log(provinceList[province.value].cityList[city.value].areaList[key].name);
+        qu+="<option value="+key+">"+provinceList[province.value].cityList[city.value].areaList[key]+"</option>"
+    }
+    area.innerHTML=qu;
+    province.onchange=function(){
+        var shi="";
+        for(key in provinceList[province.value].cityList){
+        // console.log(provinceList[province.value].cityList[key]);
+        // console.log(provinceList[province.value].cityList[key].name);
+        shi+="<option value="+key+">"+provinceList[province.value].cityList[key].name+"</option>"
+    }
+    city.innerHTML=shi;
+    var qu="";
+    for(key in provinceList[province.value].cityList[city.value].areaList){
+        // console.log(provinceList[province.value].cityList[city.value].areaList[key]);
+        // console.log(provinceList[province.value].cityList[city.value].areaList[key].name);
+        qu+="<option value="+key+">"+provinceList[province.value].cityList[city.value].areaList[key]+"</option>"
+    }
+    area.innerHTML=qu;
+    }
+    city.onchange=function(){
+        var qu="";
+    for(key in provinceList[province.value].cityList[city.value].areaList){
+        // console.log(provinceList[province.value].cityList[city.value].areaList[key]);
+        // console.log(provinceList[province.value].cityList[city.value].areaList[key].name);
+        qu+="<option value="+key+">"+provinceList[province.value].cityList[city.value].areaList[key]+"</option>"
+    }
+    area.innerHTML=qu;
     }
 </script>
 </html>
