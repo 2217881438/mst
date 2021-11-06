@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./所属城市.js"></script>
+</head>
+<body>
+    <select name="" id="province"></select>
+    <select name="" id="city"></select>
+    <select name="" id="area"></select>
+</body>
+<script>
+    var province=document.getElementById("province");
+    var city=document.getElementById("city");
+    var area=document.getElementById("area");
+    var sheng="";
+    for(key in provinceList){
+        // console.log(key);
+        // console.log(provinceList[key]);
+        // console.log(provinceList[key].name);
+        sheng+="<option value="+key+">"+provinceList[key].name+"</option>";
+    }
+    province.innerHTML=sheng;
+    var shi="";
+    for(key in provinceList[province.value].cityList){
+        console.log(provinceList[province.value].cityList[key]);
+        console.log(provinceList[province.value].cityList[key].name);
+        shi+="<option value="+key+">"+provinceList[province.value].cityList[key].name+"</option>"
+    }
+    city.innerHTML=shi;
+    var qu="";
+    for(key in provinceList[province.value].cityList[city.value].areaList){
+        
+    }
+</script>
+</html>
